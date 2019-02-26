@@ -33,24 +33,38 @@ public class MainActivity extends AppCompatActivity
             mOnNavigationItemSelectedListener
 
             = item -> {
-                switch (item.getItemId()) {
-                    case R.id.navigation_home:
-                        switchToActivity("home",
-                                "atlas.fragment.intent.action.FIRST_FRAGMENT"/*"com.taobao
+                if(item.getItemId() == R.id.navigation_home){
+                    switchToActivity("home",
+                            "atlas.fragment.intent.action.FIRST_FRAGMENT"/*"com.taobao
                                 .firstbundle.FirstBundleActivity"*/);
-                        Toast.makeText(RuntimeVariables.androidApplication,"on click",Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.navigation_dashboard:
-                        switchToActivity("second",
-                                "atlas.fragment.intent.action.SECOND_BUNDLE_FRAGMENT"/*"com
+                    Toast.makeText(RuntimeVariables.androidApplication,"on click",Toast.LENGTH_SHORT).show();
+                    return true;
+                }else if(item.getItemId() == R.id.navigation_dashboard){
+                    switchToActivity("second",
+                            "atlas.fragment.intent.action.SECOND_BUNDLE_FRAGMENT"/*"com
                                 .taobao.secondbundle.SecondBundleActivity"*/);
-                        return true;
-                    case R.id.navigation_notifications:
-    //                    Intent intent3 = new Intent();
-    //                    intent3.setClassName(getBaseContext(),"com.taobao.firstBundle.FirstBundleActivity");
-    //                    mActivityDelegate.execStartChildActivityInternal(mActivityGroupContainer,"third",intent3);
-                        return true;
+                    return true;
+                }else if(item.getItemId() == R.id.navigation_notifications){
+                    return true;
                 }
+//                switch (item.getItemId()) {
+//                    case R.id.navigation_home:
+//                        switchToActivity("home",
+//                                "atlas.fragment.intent.action.FIRST_FRAGMENT"/*"com.taobao
+//                                .firstbundle.FirstBundleActivity"*/);
+//                        Toast.makeText(RuntimeVariables.androidApplication,"on click",Toast.LENGTH_SHORT).show();
+//                        return true;
+//                    case R.id.navigation_dashboard:
+//                        switchToActivity("second",
+//                                "atlas.fragment.intent.action.SECOND_BUNDLE_FRAGMENT"/*"com
+//                                .taobao.secondbundle.SecondBundleActivity"*/);
+//                        return true;
+//                    case R.id.navigation_notifications:
+//    //                    Intent intent3 = new Intent();
+//    //                    intent3.setClassName(getBaseContext(),"com.taobao.firstBundle.FirstBundleActivity");
+//    //                    mActivityDelegate.execStartChildActivityInternal(mActivityGroupContainer,"third",intent3);
+//                        return true;
+//                }
                 return false;
             };
 
